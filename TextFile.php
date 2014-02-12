@@ -85,7 +85,7 @@ class TextFile{
 
         $this->result = "ファイルの登録に成功しました";
         return true;
-	}
+    }
 
 
     //-------------------------
@@ -93,7 +93,7 @@ class TextFile{
     //-------------------------
     public function viewFileValue(){
 
-		// ファイル内容を改行コードごとに、Arrayへ設定する
+        // ファイル内容を改行コードごとに、Arrayへ設定する
         $fileArray = $this->getFileValueArray();
         if( !$fileArray ) return false;
 
@@ -101,14 +101,14 @@ class TextFile{
         //  ファイル内容表示
         //------------------
         print('<table class="table">');
-		$fileArrayLength = count($fileArray);
+        $fileArrayLength = count($fileArray);
         for($i = 0; $i<$fileArrayLength; $i++){
             // 後ろから取り出す
             $value = array_pop($fileArray);
 
             // 空文字であればスキップ
             if($value == ""){
-            	continue;
+                continue;
             }
             
             // 日付のみ取得
@@ -144,7 +144,7 @@ class TextFile{
         //----------------------------------
 
         return true;
-	}
+    }
 
     //---------------
     //  更新メソッド
@@ -171,10 +171,10 @@ class TextFile{
         $updateKey = null; // 更新対象行のKey
         // 更新対象行を検索
         foreach ($fileArray as $key => $value) {
-        	// 更新する行と一致すれば
-        	if($value === $preData){
-        		$updateKey = $key;
-        	}
+            // 更新する行と一致すれば
+            if($value === $preData){
+            $updateKey = $key;
+            }
         }
 
         if($updateKey === null){
@@ -202,7 +202,7 @@ class TextFile{
 
         $this->result = "ファイルの対象行 更新に成功しました";
         return true;
-	}
+    }
 
     //---------------
     //  削除メソッド
@@ -224,10 +224,10 @@ class TextFile{
         $deleteKey = null; // 削除対象行のKey
         // ファイル内容配列を更新
         foreach ($fileArray as $key => $value) {
-        	// 更新する行と一致すれば
-        	if($value === $preData){
-        		$deleteKey = $key;
-        	}
+            // 更新する行と一致すれば
+            if($value === $preData){
+            $deleteKey = $key;
+            }
         }
         if($deleteKey === null){
             $this->result = "ファイルの削除対象行 が見つかりませんでした";
@@ -262,7 +262,7 @@ class TextFile{
 
         $this->result = "ファイルの対象行 削除に成功しました";
         return true;
-	}
+    }
 
 //
 //
