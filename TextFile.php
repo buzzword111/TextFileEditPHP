@@ -1,27 +1,27 @@
 <?php
 
 class TextFile{
-	// 入力された日付
-	protected $date = '';
-	// 入力されたメッセージ
-	protected $message = '';
+    // 入力された日付
+    protected $date = '';
+    // 入力されたメッセージ
+    protected $message = '';
     // 画像名
     protected $imageName = '';
     // 入力された画像の表示位置
     protected $imagePos = 0;
 
-	// 処理結果
-	public $result = '';
+    // 処理結果
+    public $result = '';
 
-	// タグのエスケープ判断フラグ
-	// protected $tagEscapeFlg = false;
+    // タグのエスケープ判断フラグ
+    // protected $tagEscapeFlg = false;
 
 
 //-------------
 //    定数
 //-------------
-	// 編集するファイルパス
-	const FILE_PATH = "./sample.txt";
+    // 編集するファイルパス
+    const FILE_PATH = "./sample.txt";
     // ファイルアップロード時の保存パス
     const FILE_SAVE_PATH = "/var/www/html/";
 
@@ -51,7 +51,7 @@ class TextFile{
     //---------------
     //  登録メソッド
     //---------------
-	public function regist(){
+    public function regist(){
 
         // ファイルオープン と　ロック
         $fp = $this->fileOpenAndLock(TextFile::FILE_ADD_MODE);
@@ -91,7 +91,7 @@ class TextFile{
     //-------------------------
     //  ファイル内容表示メソッド
     //-------------------------
-	public function viewFileValue(){
+    public function viewFileValue(){
 
 		// ファイル内容を改行コードごとに、Arrayへ設定する
         $fileArray = $this->getFileValueArray();
@@ -149,7 +149,7 @@ class TextFile{
     //---------------
     //  更新メソッド
     //---------------
-	public function update(){
+    public function update(){
 
         // 変更対象データ = 変更前データを取得
         $preData = $this->getPreData();
@@ -207,7 +207,7 @@ class TextFile{
     //---------------
     //  削除メソッド
     //---------------
-	public function delete(){
+    public function delete(){
 
         // 変更対象データ = 変更前データを取得
         $preData = $this->getPreData();
